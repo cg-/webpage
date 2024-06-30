@@ -15,7 +15,7 @@ jobs:
 
       - uses: betanzos/scp-upload@v1
         with:
-          source: /github/home
+          source: ${{ github.workspace }}
           host: ${{secrets.HOST}}
           port: ${{secrets.PORT}}
           username: ${{secrets.USER}}
