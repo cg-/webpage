@@ -10,7 +10,7 @@ cd ~/workspace
 podman stop webpage
 podman rm webpage
 podman build -t webpage .
-podman run --name webpage -d -t webpage
+podman run -d --name webpage -t webpage
 rm -rf ~/workspace
 
 echo Completed update at $(date -u) >> /tmp/update_log
