@@ -11,7 +11,7 @@ podman stop webpage
 podman rm webpage
 podman system prune -f --all
 podman build -t webpage .
-podman run -d --name webpage -t webpage
+podman run -d -p 8080:8080 --name webpage -t webpage
 rm -rf ~/workspace
 
 echo Completed update at $(date -u) >> /tmp/update_log

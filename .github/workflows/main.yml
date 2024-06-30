@@ -3,12 +3,12 @@ name: webpage deploy
 on:
   push:
     branches:
-      - 'main'
-   
+      - "main"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout
         uses: actions/checkout@v4.1.7
 
@@ -23,7 +23,7 @@ jobs:
           remote_dir: ~
           recursive: true
 
-      - name: Execute Remtoe Deploy Script via SSH
+      - name: Execute Remote Deploy Script via SSH
         uses: D3rHase/ssh-command-action@v0.2.2
         with:
           host: ${{secrets.HOST}}
