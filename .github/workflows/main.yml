@@ -6,14 +6,14 @@ on:
       - 'main'
    
 jobs:
-  build:
-    name: SSH Copy and Deploy
+  deploy:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
         uses: actions/checkout@v4.1.7
 
-      - uses: betanzos/scp-upload@v1
+      - name: Upload via SCP
+        uses: betanzos/scp-upload@v1
         with:
           source: ${{ github.workspace }}
           host: ${{secrets.HOST}}
@@ -23,7 +23,8 @@ jobs:
           remote_dir: ~
           recursive: true
 
-      - uses: D3rHase/ssh-command-action@v0.2.2
+      - name: Execute Remtoe Deploy Script via SSH
+        uses: D3rHase/ssh-command-action@v0.2.2
         with:
           host: ${{secrets.HOST}}
           port: ${{secrets.PORT}}
