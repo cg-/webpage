@@ -9,6 +9,7 @@ echo Starting update at $(date -u) >> /tmp/update_log
 cd ~/workspace
 podman stop webpage
 podman rm webpage
+podman system prune -f --all
 podman build -t webpage .
 podman run -d --name webpage -t webpage
 rm -rf ~/workspace
