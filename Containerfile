@@ -3,6 +3,8 @@ FROM rust:1.79.0-slim-bookworm
 
 ARG APP_NAME=webpage
 
+EXPOSE 8080
+
 WORKDIR /app
 
 COPY . .
