@@ -7,7 +7,7 @@ on:
    
 jobs:
   build:
-    uses: D3rHase/ssh-command-action@51ec3cec93e9557d7a5289c1e31a4a28185e5200
+    uses: D3rHase/ssh-command-action@v0.2.2
     with:
       host: ${{secrets.HOST}} # Remote server address / ip - required
       port: ${{secrets.PORT}} # Remote server port -  Default: 22 - optional
