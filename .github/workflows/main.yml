@@ -1,0 +1,17 @@
+name: webpage deploy
+
+on:
+  push:
+    branches:
+      - 'master'
+   
+jobs:
+  build:
+    uses: D3rHase/ssh-command-action@51ec3cec93e9557d7a5289c1e31a4a28185e5200
+    with:
+      host: ${{secrets.HOST}} # Remote server address / ip - required
+      port: ${{secrets.PORT}} # Remote server port -  Default: 22 - optional
+      user: ${{secrets.USER}} # Remote server user - required
+      private_key: ${{secrets.PRIVATE_KEY}} # Private ssh key registered on the remote server - required
+      host_fingerprint: ${{secrets.HOST_FINGERPRINT}} # Public ssh key fingerprint, viewable via ssh-keyscan -H $HOST -p $PORT - optional
+      command: echo 'hello world' > tmp/cd-test # Command to be executed - Default: echo 'hello world' - optional
