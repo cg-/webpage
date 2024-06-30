@@ -4,6 +4,6 @@ echo Starting update at $(date -u) >> /tmp/update_log
 cd ~/workspace
 podman stop webpage
 podman build -t webpage .
-podman run -t webpage --name webpage
+podman run --name webpage -d -t webpage
 
 echo Completed update at $(date -u) >> /tmp/update_log
