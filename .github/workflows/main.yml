@@ -16,7 +16,7 @@ jobs:
           host: ${{secrets.HOST}}
           port: ${{secrets.PORT}}
           username: ${{secrets.USER}}
-          key: ${{secrets.KEY}}
+          key: ${{secrets.PRIVATE_KEY}}
           remote_dir: /tmp
           recursive: true
       - uses: D3rHase/ssh-command-action@v0.2.2
