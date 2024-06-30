@@ -30,4 +30,4 @@ jobs:
           user: ${{secrets.USER}}
           private_key: ${{secrets.PRIVATE_KEY}}
           host_fingerprint: ${{secrets.HOST_FINGERPRINT}}
-          command: echo 'hello world' > /tmp/cd-test-1
+          command: ~/workspace/scripts/remote_update.sh
