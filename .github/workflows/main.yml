@@ -12,7 +12,7 @@ jobs:
     steps: 
       - uses: betanzos/scp-upload@v1
         with:
-          source: ./*
+          source: /github/home
           host: ${{secrets.HOST}}
           port: ${{secrets.PORT}}
           username: ${{secrets.USER}}
