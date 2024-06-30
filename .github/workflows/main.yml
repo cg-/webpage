@@ -7,9 +7,18 @@ on:
    
 jobs:
   build:
-    name: SSH
+    name: SSH Copy and Deploy
     runs-on: ubuntu-latest
     steps: 
+      - uses: betanzos/scp-upload@v1
+        with:
+          source: ./
+          host: ${{secrets.HOST}}
+          port: ${{secrets.PORT}}
+          username: ${{secrets.USER}}
+          key: ${{secrets.KEY}}
+          remote_dir: /tmp
+          recursive: true
       - uses: D3rHase/ssh-command-action@v0.2.2
         with:
           host: ${{secrets.HOST}} # Remote server address / ip - required
