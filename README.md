@@ -13,6 +13,7 @@ This repository hosts the source code for my personal web page. The web server i
 - `Containerfile`: Defines the build environment for the Rust project.
 - `Cargo.toml`: Defines the Rust project for the web server.
 - `src/`: Contains the source code of the Rust server.
+- `static/`: Contains static files used by the server.
 - `scripts/`: Contains scripts use to support the CI/CD pipeline.
 - `.github/workflows/main.yml`: GitHub Actions workflow file for deploying the server.
 - `README.md`: This file, providing an overview of the repository.
