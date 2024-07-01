@@ -5,3 +5,7 @@ edition = "2021"
 
 [dependencies]
 rouille = "3.6.2"
+
+[dependencies.rust-embed]
+version = "8.4.0"
+features = ["debug-embed"]
