@@ -14,8 +14,6 @@ fn main() {
     rouille::start_server(SocketAddr::from(([0, 0, 0, 0], PORT)), move |request| {
         router!(request,
             (GET) (/) => {
-                // If the request's URL is `/`, we jump here.
-                // This block builds a `Response` object that redirects to the `/hello/world`.
                 rouille::Response::redirect_302("/index.html")
             },
 
@@ -33,8 +31,6 @@ fn main() {
                 }
             },
 
-            // The code block is called if none of the other blocks matches the request.
-            // We return an empty response with a 404 status code.
             _ => rouille::Response::empty_404()
         )
     });
