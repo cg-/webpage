@@ -1,5 +1,5 @@
 # Builds the rust program in a minimal container
-FROM rust:1.79.0-slim-bookworm
+FROM rust:slim
 
 ARG APP_NAME=webpage
 
